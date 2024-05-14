@@ -21,6 +21,13 @@ quote-style = 'single'
 pythonpath = "."
 addopts = "-p no:warnings"
 
+[tool.taskipy.tasks]
+lint = "ruff check . && ruff check . --diff"
+format = "ruff check . --fix && ruff format ."
+run = "fastapi dev src/app.py"
+pre_test = "task lint"
+test = "pytest -s -x --cov=src -vv"
+post_test = "coverage html"
 
 [tool.poetry.dependencies]
 python = "3.11.*"
