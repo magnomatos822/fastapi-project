@@ -17,15 +17,20 @@ def test_create_user():
 
     response = client.post("/users", json={"name": "Teste",
                             "email": "teste@teste", 
-                            "password": "1234"},
-                            status_code=HTTPStatus.CREATED)
+                            "password": "1234"})
     assert response.status_code == HTTPStatus.CREATED
     assert response.json() == {
         "name": "Teste", 
         "email": "teste@teste", 
         "password": "1234"
+        ffassfasfasfasfasfasfsffsfaf
+        afafafafafafffafafasf
         }
 {
+    "name": "Teste",
+    "email": "teste@teste", 
+    "password": "1234"
+
     "name": "Teste", 
     "email": "teste@teste", 
     "password": "1234"
